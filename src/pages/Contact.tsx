@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,7 +6,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,32 +13,25 @@ const Contact = () => {
     subject: "",
     message: ""
   });
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const mailtoLink = `mailto:boxofmemories.app@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    
+    const mailtoLink = `mailto:boxofmemories.app@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
     window.location.href = mailtoLink;
-    
     toast({
       title: "Email client opened",
-      description: "Your default email client should open with the message pre-filled.",
+      description: "Your default email client should open with the message pre-filled."
     });
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+  return <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Navigation */}
       <nav className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,73 +69,30 @@ const Contact = () => {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Your Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="rounded-xl border-gray-200 focus:border-[#0a91b1] focus:ring-[#0a91b1]"
-                      placeholder="Enter your full name"
-                    />
+                    
+                    
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="rounded-xl border-gray-200 focus:border-[#0a91b1] focus:ring-[#0a91b1]"
-                      placeholder="your.email@example.com"
-                    />
+                    
+                    
                   </div>
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                       Subject
                     </label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="rounded-xl border-gray-200 focus:border-[#0a91b1] focus:ring-[#0a91b1]"
-                      placeholder="What can we help you with?"
-                    />
+                    <Input id="subject" name="subject" type="text" required value={formData.subject} onChange={handleChange} className="rounded-xl border-gray-200 focus:border-[#0a91b1] focus:ring-[#0a91b1]" placeholder="What can we help you with?" />
                   </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                       Message
                     </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      rows={6}
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="rounded-xl border-gray-200 focus:border-[#0a91b1] focus:ring-[#0a91b1]"
-                      placeholder="Please describe your question or issue in detail..."
-                    />
+                    <Textarea id="message" name="message" rows={6} required value={formData.message} onChange={handleChange} className="rounded-xl border-gray-200 focus:border-[#0a91b1] focus:ring-[#0a91b1]" placeholder="Please describe your question or issue in detail..." />
                   </div>
                   
-                  <Button
-                    type="submit"
-                    className="w-full bg-[#0a91b1] hover:bg-[#087a94] text-white py-3 text-lg rounded-xl"
-                  >
+                  <Button type="submit" className="w-full bg-[#0a91b1] hover:bg-[#087a94] text-white py-3 text-lg rounded-xl">
                     Send Message
                   </Button>
                 </form>
@@ -154,18 +102,7 @@ const Contact = () => {
 
           <div className="space-y-8">
             <Card className="bg-white border-0 shadow-lg rounded-2xl overflow-hidden">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">📧 Email Support</h3>
-                <p className="text-gray-600 mb-4">
-                  For direct support, you can also email us at:
-                </p>
-                <a
-                  href="mailto:boxofmemories.app@gmail.com"
-                  className="text-[#0a91b1] font-medium hover:underline"
-                >
-                  boxofmemories.app@gmail.com
-                </a>
-              </CardContent>
+              
             </Card>
 
             <Card className="bg-white border-0 shadow-lg rounded-2xl overflow-hidden">
@@ -194,8 +131,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
