@@ -15,7 +15,7 @@ const Privacy = () => {
               <div className="w-8 h-8 bg-[#0a91b1] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">B</span>
               </div>
-              <span className="text-xl font-semibold text-gray-900">Box of Memories</span>
+              <span className="text-xl font-semibold text-gray-900">Box of Fireflies</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/faq" className="text-gray-600 hover:text-[#0a91b1] transition-colors">FAQ</Link>
@@ -41,7 +41,7 @@ const Privacy = () => {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
               <p className="text-gray-600 leading-relaxed">
-                At Box of Memories, we are committed to protecting your privacy and the security of your personal memories. 
+                At Box of Fireflies, we are committed to protecting your privacy and the security of your personal memories. 
                 This Privacy Policy explains how we collect, use, protect, and handle your information when you use our mobile application.
               </p>
             </section>
@@ -72,7 +72,7 @@ const Privacy = () => {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">How We Use Your Information</h2>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>To provide and maintain the Box of Memories service</li>
+                <li>To provide and maintain the Box of Fireflies service</li>
                 <li>To enable memory sharing with people you invite</li>
                 <li>To implement reveal date functionality</li>
                 <li>To improve our app and user experience</li>
@@ -130,7 +130,7 @@ const Privacy = () => {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Children's Privacy</h2>
               <p className="text-gray-600 leading-relaxed">
-                Box of Memories is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. 
+                Box of Fireflies is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. 
                 If you are a parent and believe your child has provided us with personal information, please contact us.
               </p>
             </section>

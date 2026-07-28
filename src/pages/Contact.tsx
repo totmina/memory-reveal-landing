@@ -41,7 +41,7 @@ const Contact = () => {
               <div className="w-8 h-8 bg-[#0a91b1] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">B</span>
               </div>
-              <span className="text-xl font-semibold text-gray-900">Box of Memories</span>
+              <span className="text-xl font-semibold text-gray-900">Box of Fireflies</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/faq" className="text-gray-600 hover:text-[#0a91b1] transition-colors">FAQ</Link>

@@ -15,7 +15,7 @@ const Terms = () => {
               <div className="w-8 h-8 bg-[#0a91b1] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">B</span>
               </div>
-              <span className="text-xl font-semibold text-gray-900">Box of Memories</span>
+              <span className="text-xl font-semibold text-gray-900">Box of Fireflies</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/faq" className="text-gray-600 hover:text-[#0a91b1] transition-colors">FAQ</Link>
@@ -41,7 +41,7 @@ const Terms = () => {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Agreement to Terms</h2>
               <p className="text-gray-600 leading-relaxed">
-                By downloading, installing, or using the Box of Memories mobile application, you agree to be bound by these Terms of Service. 
+                By downloading, installing, or using the Box of Fireflies mobile application, you agree to be bound by these Terms of Service. 
                 If you do not agree to these terms, please do not use our service.
               </p>
             </section>
@@ -49,7 +49,7 @@ const Terms = () => {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Description of Service</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Box of Memories is a mobile application that allows users to:
+                Box of Fireflies is a mobile application that allows users to:
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>Create virtual memory boxes to store photos, voice recordings, and notes</li>
@@ -88,14 +88,14 @@ const Terms = () => {
                 <div>
                   <h3 className="text-lg font-medium text-gray-900 mb-2">Your Content</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    You retain ownership of all content you upload to Box of Memories, including photos, voice recordings, and text. 
+                    You retain ownership of all content you upload to Box of Fireflies, including photos, voice recordings, and text. 
                     By using our service, you grant us a limited license to store, process, and display your content solely for the purpose of providing the service.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-gray-900 mb-2">Our Content</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    The Box of Memories application, including its design, features, and underlying technology, is owned by us and protected by intellectual property laws.
+                    The Box of Fireflies application, including its design, features, and underlying technology, is owned by us and protected by intellectual property laws.
                   </p>
                 </div>
               </div>
@@ -111,7 +111,7 @@ const Terms = () => {
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Prohibited Uses</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">You may not use Box of Memories to:</p>
+              <p className="text-gray-600 leading-relaxed mb-4">You may not use Box of Fireflies to:</p>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
                 <li>Upload illegal, harmful, or offensive content</li>
                 <li>Violate any applicable laws or regulations</li>
@@ -125,7 +125,7 @@ const Terms = () => {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Service Availability</h2>
               <p className="text-gray-600 leading-relaxed">
-                While we strive to provide reliable service, we cannot guarantee that Box of Memories will be available at all times. 
+                While we strive to provide reliable service, we cannot guarantee that Box of Fireflies will be available at all times. 
                 We may temporarily suspend or restrict access for maintenance, updates, or other operational reasons. 
                 We are not liable for any interruptions or downtime.
               </p>
@@ -153,7 +153,7 @@ const Terms = () => {
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Disclaimers and Limitations</h2>
               <div className="bg-yellow-50 p-6 rounded-xl mb-4">
                 <p className="text-gray-800 font-medium">
-                  Box of Memories is provided "as is" without warranties of any kind. We are not liable for any damages arising from your use of the service.
+                  Box of Fireflies is provided "as is" without warranties of any kind. We are not liable for any damages arising from your use of the service.
                 </p>
               </div>
               <p className="text-gray-600 leading-relaxed">
