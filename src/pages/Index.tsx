@@ -209,7 +209,7 @@ const Index = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#0a91b1] to-[#06d6ff] rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg shadow-[#0a91b1]/20">
                     <span className="text-white text-2xl">📦</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">Create Memory Boxes</h3>
+                  <h3 className="text-xl font-semibold text-white mb-4">Create Box of Fireflieses</h3>
                   <p className="text-white/70 leading-relaxed">
                     Organize your memories into beautiful virtual boxes. Add photos, voice recordings, and heartfelt notes.
                   </p>
@@ -326,9 +326,9 @@ const Index = () => {
                     </div>
                     <div className="p-6 h-full bg-gradient-to-br from-[#0b1d36] to-[#030b1c]">
                       <h3 className="text-2xl font-bold text-white mb-4">Hello, Alex!</h3>
-                      <p className="text-white/70 mb-6">Welcome to your Memory Boxes.</p>
+                      <p className="text-white/70 mb-6">Welcome to your Box of Fireflieses.</p>
                       <Button className="w-full bg-gradient-to-r from-[#0a91b1] to-[#06d6ff] text-white rounded-xl mb-4">
-                        + Create new Memory Box
+                        + Create new Box of Fireflies
                       </Button>
                       <div className="space-y-3">
                         <motion.div
@@ -368,7 +368,7 @@ const Index = () => {
         >
           <Heart className="inline-block text-pink-400 mb-4 animate-pulse" size={32} />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-            Start Creating Your <span className="bg-gradient-to-r from-[#0a91b1] to-[#06d6ff] bg-clip-text text-transparent">Memory Boxes</span> Today
+            Start Creating Your <span className="bg-gradient-to-r from-[#0a91b1] to-[#06d6ff] bg-clip-text text-transparent">Box of Fireflieses</span> Today
           </h2>
           <p className="text-xl text-white/80 mb-8">
             Join thousands of users who are already preserving their most precious moments together.
