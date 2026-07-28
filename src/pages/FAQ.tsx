@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const FAQ = () => {
   const faqs = [
     {
-      question: "What is Box of Memories?",
-      answer: "Box of Memories is a mobile app that allows you to create virtual memory boxes to store notes, photos, and voice recordings of special life moments. You can set reveal dates to keep memories private until the perfect time to share them."
+      question: "What is Box of Fireflies?",
+      answer: "Box of Fireflies is a mobile app that allows you to create virtual memory boxes to store notes, photos, and voice recordings of special life moments. You can set reveal dates to keep memories private until the perfect time to share them."
     },
     {
       question: "How does the Reveal Date feature work?",
@@ -40,7 +40,7 @@ const FAQ = () => {
     },
     {
       question: "Is the app free to use?",
-      answer: "Box of Memories offers both free and premium features. Basic memory creation and sharing is free, with additional features available through our premium subscription."
+      answer: "Box of Fireflies offers both free and premium features. Basic memory creation and sharing is free, with additional features available through our premium subscription."
     },
     {
       question: "What happens if I lose my phone?",
@@ -59,7 +59,7 @@ const FAQ = () => {
               <div className="w-8 h-8 bg-[#0a91b1] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">B</span>
               </div>
-              <span className="text-xl font-semibold text-gray-900">Box of Memories</span>
+              <span className="text-xl font-semibold text-gray-900">Box of Fireflies</span>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/contact" className="text-gray-600 hover:text-[#0a91b1] transition-colors">Support</Link>
@@ -76,7 +76,7 @@ const FAQ = () => {
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-gray-600">
-            Everything you need to know about Box of Memories
+            Everything you need to know about Box of Fireflies
           </p>
         </div>
 

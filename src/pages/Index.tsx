@@ -77,7 +77,7 @@ const Index = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-[#0a91b1] to-[#06d6ff] rounded-full flex items-center justify-center shadow-lg shadow-[#0a91b1]/20">
                 <span className="text-white font-bold text-sm">B</span>
               </div>
-              <span className="text-xl font-semibold text-white tracking-wider">Box of Memories</span>
+              <span className="text-xl font-semibold text-white tracking-wider">Box of Fireflies</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/faq" className="text-white/70 hover:text-white transition-colors relative group">
@@ -269,7 +269,7 @@ const Index = () => {
                 Beautiful. <span className="bg-gradient-to-r from-[#0a91b1] to-[#06d6ff] bg-clip-text text-transparent">Simple</span>. Meaningful.
               </h2>
               <p className="text-lg text-white/80 mb-8 leading-relaxed">
-                Box of Memories makes it easy to capture and preserve life's most precious moments. 
+                Box of Fireflies makes it easy to capture and preserve life's most precious moments. 
                 Whether it's a romantic evening, a family gathering, or a milestone achievement, 
                 your memories deserve a beautiful home.
               </p>
@@ -399,7 +399,7 @@ const Index = () => {
                 <div className="w-8 h-8 bg-gradient-to-r from-[#0a91b1] to-[#06d6ff] rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">B</span>
                 </div>
-                <span className="text-xl font-semibold">Box of Memories</span>
+                <span className="text-xl font-semibold">Box of Fireflies</span>
               </div>
               <p className="text-white/50">
                 Preserving your most precious moments, one memory at a time.
@@ -429,7 +429,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/50">
-            <p>&copy; 2024 Box of Memories. All rights reserved.</p>
+            <p>&copy; 2024 Box of Fireflies. All rights reserved.</p>
           </div>
         </div>
       </footer>
