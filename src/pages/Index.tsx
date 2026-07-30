@@ -1,11 +1,12 @@
-
+import logoAsset from "@/assets/Logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Heart, Stars, Sparkles, Moon, ArrowLeft } from "lucide-react";
+import { Heart, Stars, Sparkles, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -102,29 +103,31 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <motion.div 
+      <section className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeInUpVariants}
           className="max-w-6xl mx-auto text-center"
         >
-          <div className="inline-block mb-4">
-            <Heart className="inline-block text-pink-400 mr-2 animate-pulse" size={24} />
-            <span className="text-pink-200">Memories that last forever</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-            Preserve Your Most
-            <span className="block bg-gradient-to-r from-[#0a91b1] to-[#06d6ff] bg-clip-text text-transparent">Beautiful Moments Together</span>
+          <motion.img
+            src={logoAsset.url}
+            alt="Box of Fireflies"
+            className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 object-contain drop-shadow-[0_0_40px_rgba(6,214,255,0.3)]"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, type: "spring" }}
+          />
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-white">
+            Box of Fireflies
           </h1>
-          <motion.p 
-            variants={fadeInUpVariants}
-            className="text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed"
-          >
-            Create stunning virtual memory boxes filled with notes, photos, and voice recordings
-            of your special moments. Set reveal dates to surprise your loved ones with heartfelt memories.
-          </motion.p>
-          <motion.div 
+          <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl mx-auto leading-relaxed">
+            Private journal for couples, families and friends.
+          </p>
+          <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Capture memories, photos and voice messages. Reveal them when the time is right.
+          </p>
+          <motion.div
             variants={fadeInUpVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
@@ -137,6 +140,7 @@ const Index = () => {
           </motion.div>
         </motion.div>
       </section>
+
 
       {/* App Screenshots Carousel Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
