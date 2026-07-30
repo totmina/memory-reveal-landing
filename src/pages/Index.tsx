@@ -1,4 +1,3 @@
-import logoAsset from "@/assets/Logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -111,7 +110,7 @@ const Index = () => {
           className="max-w-6xl mx-auto text-center"
         >
           <motion.img
-            src={logoAsset.url}
+            src="/logo.png"
             alt="Box of Fireflies"
             className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 object-contain drop-shadow-[0_0_40px_rgba(6,214,255,0.3)]"
             initial={{ opacity: 0, scale: 0.9 }}
