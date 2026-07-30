@@ -1,11 +1,12 @@
-
+import logoAsset from "@/assets/Logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Heart, Stars, Sparkles, Moon, ArrowLeft } from "lucide-react";
+import { Heart, Stars, Sparkles, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
