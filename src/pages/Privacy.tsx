@@ -32,125 +32,162 @@ const Privacy = () => {
             Privacy Policy
           </h1>
           <p className="text-xl text-gray-600">
-            Last updated: December 2024
+            Last updated: August 2026
           </p>
         </div>
 
         <Card className="bg-white border-0 shadow-lg rounded-2xl overflow-hidden">
           <CardContent className="p-8 space-y-8">
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Privacy Policy</h2>
               <p className="text-gray-600 leading-relaxed">
-                At Box of Fireflies, we are committed to protecting your privacy and the security of your personal memories. 
-                This Privacy Policy explains how we collect, use, protect, and handle your information when you use our mobile application.
+                Welcome to Box of Fireflies. Your privacy matters to us. This Privacy Policy explains what information we collect,
+                how we use it, and how we protect it when you use the Box of Fireflies mobile application (“App”).
+              </p>
+              <p className="text-gray-600 leading-relaxed mt-2">
+                By using the App, you agree to this Privacy Policy.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Information We Collect</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">When you use Box of Fireflies, we may collect:</p>
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">Personal Information</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">Account Information</h3>
                   <ul className="list-disc list-inside text-gray-600 space-y-1">
-                    <li>Account information (name, email address)</li>
-                    <li>Profile information you choose to provide</li>
-                    <li>Device information for app functionality</li>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>User ID</li>
+                    <li>Sign-in information provided through Apple Sign In or Google Sign In</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">Memory Content</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">Content You Create</h3>
+                  <p className="text-gray-600 mb-2">You choose what to store in your Boxes, including:</p>
                   <ul className="list-disc list-inside text-gray-600 space-y-1">
-                    <li>Photos you upload to memory boxes</li>
-                    <li>Voice recordings you create</li>
-                    <li>Text notes and descriptions</li>
-                    <li>Metadata associated with your memories (dates, locations if provided)</li>
+                    <li>Photos</li>
+                    <li>Voice recordings</li>
+                    <li>Text notes</li>
+                    <li>Box titles</li>
+                    <li>Reveal Dates</li>
+                    <li>Invitation information required to share a Box</li>
                   </ul>
+                  <p className="text-gray-600 mt-2">
+                    Your content is private and is visible only to members of the Box you invite.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">Technical Information</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We may collect limited technical information such as your device type, operating system version, app version,
+                    and crash reports to improve the reliability and security of the App.
+                  </p>
                 </div>
               </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Permissions</h2>
+              <p className="text-gray-600 leading-relaxed mb-2">
+                Depending on how you use the App, we may request permission to access:
+              </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>Photos (to upload images)</li>
+                <li>Microphone (to record voice memories)</li>
+                <li>Notifications (to notify you about Reveal Dates and other important events)</li>
+              </ul>
+              <p className="text-gray-600 mt-2">These permissions are used only for the features you choose to use.</p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">How We Use Your Information</h2>
+              <p className="text-gray-600 mb-2">We use your information to:</p>
               <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>To provide and maintain the Box of Fireflies service</li>
-                <li>To enable memory sharing with people you invite</li>
-                <li>To implement reveal date functionality</li>
-                <li>To improve our app and user experience</li>
-                <li>To provide customer support when requested</li>
-                <li>To ensure the security and integrity of our service</li>
+                <li>provide and maintain the App;</li>
+                <li>create and manage your account;</li>
+                <li>store and synchronize your memories;</li>
+                <li>allow you to share Boxes with invited users;</li>
+                <li>provide Reveal Date functionality;</li>
+                <li>send important notifications;</li>
+                <li>respond to support requests;</li>
+                <li>improve the App and keep it secure.</li>
               </ul>
+              <p className="text-gray-600 mt-2">We do not sell your personal information.</p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Information Sharing</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">In-App Purchases</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Box of Fireflies offers optional Premium subscriptions through Apple’s In-App Purchase system.
+                Payments are processed by Apple. We do not receive or store your payment card information.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Sharing Your Information</h2>
               <div className="bg-[#0a91b1] bg-opacity-10 p-6 rounded-xl mb-4">
                 <p className="text-gray-800 font-medium">
-                  We do not sell, trade, or share your personal information or memory content with third parties for commercial purposes.
+                  We do not sell or rent your personal information.
                 </p>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Your memories are shared only with the people you explicitly invite to your memory boxes. 
-                We may only disclose information if required by law or to protect the safety and security of our users.
+                Your memories are shared only with users you explicitly invite to the same Box.
+                We may disclose information only if required by law or when necessary to protect the security of our users or the Service.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Security</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                We implement industry-standard security measures to protect your information:
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Security</h2>
+              <p className="text-gray-600 leading-relaxed">
+                We take reasonable measures to protect your information. However, no method of electronic storage or transmission
+                over the Internet is completely secure.
               </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>Encryption of data in transit and at rest</li>
-                <li>Secure cloud storage infrastructure</li>
-                <li>Regular security audits and updates</li>
-                <li>Access controls and authentication measures</li>
-                <li>Privacy by design principles in our development process</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Your Rights and Choices</h2>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>Access and download your personal data</li>
-                <li>Correct or update your information</li>
-                <li>Delete your account and associated data</li>
-                <li>Control who has access to your memory boxes</li>
-                <li>Opt out of non-essential communications</li>
-              </ul>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Retention</h2>
               <p className="text-gray-600 leading-relaxed">
-                We retain your personal information and memory content for as long as your account is active or as needed to provide services. 
-                If you delete your account, we will remove your personal data and memories within 30 days, except where retention is required by law.
+                We keep your information for as long as your account is active. If you delete your account, we will delete your
+                personal information and associated content within 30 days, unless we are legally required to keep certain information.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Your Rights</h2>
+              <p className="text-gray-600 mb-2">You may:</p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <li>access your personal information;</li>
+                <li>update your information;</li>
+                <li>delete your account;</li>
+                <li>request a copy of your personal data.</li>
+              </ul>
+              <p className="text-gray-600 mt-2">You can delete your account directly from the App.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Children’s Privacy</h2>
               <p className="text-gray-600 leading-relaxed">
-                Box of Fireflies is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. 
-                If you are a parent and believe your child has provided us with personal information, please contact us.
+                Box of Fireflies is not intended for children below the minimum age required by applicable law to create an account
+                without parental consent. If you believe that a child has provided personal information, please contact us so we can remove it.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Changes to This Policy</h2>
               <p className="text-gray-600 leading-relaxed">
-                We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy in the app 
-                and updating the "Last updated" date. Your continued use of the service after changes become effective constitutes acceptance of the updated policy.
+                We may update this Privacy Policy from time to time. If we make significant changes, we will update the “Last updated” date.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Us</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                If you have questions about this Privacy Policy or our privacy practices, please contact us:
+                If you have any questions about this Privacy Policy, please contact us:
               </p>
               <div className="bg-gray-50 p-4 rounded-xl">
                 <p className="text-gray-800">
-                  Email: <a href="mailto:boxofmemories.app@gmail.com" className="text-[#0a91b1] hover:underline">boxofmemories.app@gmail.com</a>
+                  Email: <a href="mailto:support@totmina.com" className="text-[#0a91b1] hover:underline">support@totmina.com</a>
                 </p>
               </div>
             </section>
