@@ -112,7 +112,7 @@ const Index = () => {
           <motion.img
             src="/logo.png"
             alt="Box of Fireflies"
-            className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 object-contain drop-shadow-[0_0_40px_rgba(6,214,255,0.3)]"
+            className="w-40 h-40 md:w-52 md:h-52 mx-auto mb-8 object-cover rounded-[22.5%] shadow-2xl ring-1 ring-white/20 drop-shadow-[0_0_40px_rgba(6,214,255,0.3)]"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, type: "spring" }}
