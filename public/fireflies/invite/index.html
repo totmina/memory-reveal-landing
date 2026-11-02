@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're invited · Box of Fireflies</title>
+<meta name="robots" content="noindex">
+<meta name="apple-itunes-app" content="app-id=6795919103">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 24px 16px; background: #fff9f5; color: #4a4a4a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main {
+    width: 100%; max-width: 380px; text-align: center; background: #fff; border-radius: 16px;
+    padding: 24px 20px 28px; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+  img#box-cover { display: block; width: 100%; height: auto; border-radius: 12px; background: #def7f6; }
+  h1 { font-size: 22px; line-height: 1.3; margin: 20px 0 6px; }
+  #box-name { font-size: 18px; font-weight: 700; color: #0a91b1; margin: 0 0 20px; overflow-wrap: anywhere; }
+  #box-name:empty { display: none; }
+  #code-block { margin: 0 0 22px; font-size: 14px; color: #6b6b6b; }
+  #invite-code {
+    display: block; margin: 6px 0 0; font-size: 26px; letter-spacing: 4px; font-weight: 700; color: #4a4a4a;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+  }
+  #code-block[hidden] { display: none; }
+  .store {
+    display: block; width: 100%; padding: 14px 16px; margin-top: 10px; border-radius: 8px;
+    font-size: 16px; font-weight: 700; text-decoration: none; background: #0a91b1; color: #fff;
+  }
+  .store.disabled { background: #e9e9e9; color: #6b6b6b; cursor: default; }
+</style>
+</head>
+<body>
+<main>
+  <img id="box-cover" src="cover.png" alt="Box cover" width="1200" height="800">
+  <h1 id="invite-title">You're invited to a Box of Fireflies</h1>
+  <p id="box-name"></p>
+  <p id="code-block">Already have the app? Open it and enter this code.<span id="invite-code"></span></p>
+  <a id="app-store-link" class="store" href="https://apps.apple.com/app/apple-store/id6795919103">Download on the App Store</a>
+  <a id="play-link" class="store">Get it on Google Play</a>
+</main>
+<script>
+(function () {
+  var INVITE_PREVIEW_URL = 'https://us-central1-recuerdos-b2506.cloudfunctions.net/invitePreview';
+  var APP_STORE_PROVIDER_TOKEN = '';
+  var PLAY_LISTED = false;
+  var APP_STORE_ID = '6795919103';
+  var PLAY_PACKAGE = 'com.totmina.memories';
+  var DEFAULT_TITLE = "You're invited to a Box of Fireflies";
+
+  var params = new URLSearchParams(window.location.search);
+  var code = (params.get('code') || '').trim().toUpperCase();
+  var codeValid = /^[A-Z0-9]{8}$/.test(code);
+  var ct = params.get('ct') || '';
+  if (!/^[a-z0-9-]{1,40}$/.test(ct)) ct = 'invite';
+
+  var title = document.getElementById('invite-title');
+  var boxName = document.getElementById('box-name');
+  var cover = document.getElementById('box-cover');
+  var codeBlock = document.getElementById('code-block');
+  var codeEl = document.getElementById('invite-code');
+  var appStore = document.getElementById('app-store-link');
+  var play = document.getElementById('play-link');
+
+  // Store buttons first: they never depend on the preview.
+  var appStoreUrl = 'https://apps.apple.com/app/apple-store/id' + APP_STORE_ID + '?ct=' + ct;
+  if (APP_STORE_PROVIDER_TOKEN) appStoreUrl += '&pt=' + encodeURIComponent(APP_STORE_PROVIDER_TOKEN);
+  appStore.setAttribute('href', appStoreUrl + '&mt=8');
+
+  if (PLAY_LISTED) {
+    play.setAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=' + PLAY_PACKAGE + '&referrer=' +
+        encodeURIComponent('utm_source=totmina.com&utm_medium=invite_page&utm_campaign=' + ct)
+    );
+  } else {
+    play.textContent = 'Coming soon to Google Play';
+    play.className = 'store disabled';
+    play.setAttribute('aria-disabled', 'true');
+  }
+
+  // A cover that fails to load falls back to the default one, once.
+  cover.addEventListener('error', function () {
+    if (cover.getAttribute('src') !== 'cover.png') cover.setAttribute('src', 'cover.png');
+  });
+
+  function showInvalid() {
+    title.textContent = "This invite link isn't valid";
+    codeBlock.hidden = true;
+    codeEl.hidden = true;
+  }
+
+  if (!codeValid) {
+    showInvalid();
+    return;
+  }
+  codeEl.textContent = code;
+
+  fetch(INVITE_PREVIEW_URL + '?code=' + encodeURIComponent(code))
+    .then(function (res) {
+      if (res.status === 404) { showInvalid(); return null; }
+      if (!res.ok) return null;
+      return res.json();
+    })
+    .then(function (data) {
+      if (!data) return;
+      var name = typeof data.inviterFirstName === 'string' ? data.inviterFirstName : '';
+      title.textContent = name ? name + ' invited you to a Box of Fireflies' : DEFAULT_TITLE;
+      boxName.textContent = typeof data.boxName === 'string' ? data.boxName : '';
+      if (typeof data.coverUrl === 'string' && data.coverUrl) cover.setAttribute('src', data.coverUrl);
+    })
+    .catch(function () {
+      // The page still works without the preview: generic title, the code and the store buttons.
+    });
+})();
+</script>
+</body>
+</html>

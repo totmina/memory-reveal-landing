@@ -4,6 +4,15 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
+      // Invite links: /fireflies/invite/<CODE> has no file of its own on GitHub Pages,
+      // so hand it to the static invite page, keeping the query (ct and friends).
+      var inviteMatch = window.location.pathname.match(/^\/fireflies\/invite\/([A-Za-z0-9]{1,16})\/?$/);
+      if (inviteMatch) {
+        window.location.replace(
+          '/fireflies/invite/?code=' + inviteMatch[1] +
+          (window.location.search ? '&' + window.location.search.slice(1) : '')
+        );
+      } else {
       // GitHub Pages 404 redirect for Single Page Applications
       // This script takes the current location and redirects to the index page
       // with the path encoded as a query parameter
@@ -16,8 +25,9 @@
         (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );
+      }
     </script>
   </head>
   <body>
   </body>
-</html> 
+</html>

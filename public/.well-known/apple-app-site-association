@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["QD27A48GSA.com.totmina.boxoffireflies"],
+        "components": [
+          { "/": "/fireflies/invite/*", "comment": "Box invites" }
+        ]
+      }
+    ]
+  }
+}
