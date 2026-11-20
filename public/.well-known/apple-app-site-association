@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["QD27A48GSA.com.totmina.boxoffireflies"],
+        "appIDs": ["5SVVXP6B6P.com.totmina.boxoffireflies"],
         "components": [
           { "/": "/fireflies/invite/*", "comment": "Box invites" },
           { "/": "/fireflies/new/*", "comment": "Occasion links from custom product pages" }

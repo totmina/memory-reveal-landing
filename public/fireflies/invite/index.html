@@ -5,48 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>You're invited · Box of Fireflies</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1a20">
 <meta name="apple-itunes-app" content="app-id=6795919103">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 <style>
-  :root { color-scheme: light; }
+  /* Night design: the tokens in app/theme/colors.ts and the fonts in app/theme/typography.ts. */
+  @font-face { font-family: "Fraunces"; src: url("fonts/Fraunces-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Figtree"; src: url("fonts/Figtree-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Figtree"; src: url("fonts/Figtree-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+  :root { color-scheme: dark; }
   * { box-sizing: border-box; }
   body {
     margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    padding: 24px 16px; background: #fff9f5; color: #4a4a4a;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 24px 16px 32px; background: #0b1a20; color: #fff4d6; font-size: 16px;
+    background-image: radial-gradient(ellipse at 50% 0%, #14303a 0%, #0b1a20 55%, #07121a 100%);
+    font-family: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  main {
-    width: 100%; max-width: 380px; text-align: center; background: #fff; border-radius: 16px;
-    padding: 24px 20px 28px; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  main { width: 100%; max-width: 400px; text-align: center; }
+  .brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 20px; font-size: 15px; font-weight: 600; color: #a9b8b6; }
+  .brand img { width: 36px; height: 36px; border-radius: 9px; }
+  img#box-cover { display: block; width: 100%; height: auto; border-radius: 16px; background: #13262e; }
+  h1 { font-size: 17px; line-height: 1.4; font-weight: 400; color: #a9b8b6; margin: 22px 0 4px; }
+  #box-name {
+    font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 40px; line-height: 1.1;
+    color: #fff4d6; margin: 0 0 24px; overflow-wrap: anywhere;
   }
-  img#box-cover { display: block; width: 100%; height: auto; border-radius: 12px; background: #def7f6; }
-  h1 { font-size: 22px; line-height: 1.3; margin: 20px 0 6px; }
-  #box-name { font-size: 18px; font-weight: 700; color: #0a91b1; margin: 0 0 20px; overflow-wrap: anywhere; }
   #box-name:empty { display: none; }
-  #code-block { margin: 0 0 22px; font-size: 14px; color: #6b6b6b; }
-  #invite-code {
-    display: block; margin: 6px 0 0; font-size: 26px; letter-spacing: 4px; font-weight: 700; color: #4a4a4a;
-    font-family: ui-monospace, Menlo, Consolas, monospace;
-  }
+  #code-block { margin: 0 0 24px; padding: 16px 16px 18px; border-radius: 16px; background: #13262e; }
   #code-block[hidden] { display: none; }
-  .store {
-    display: block; width: 100%; padding: 14px 16px; margin-top: 10px; border-radius: 8px;
-    font-size: 16px; font-weight: 700; text-decoration: none; background: #0a91b1; color: #fff;
+  #code-label { margin: 0 0 10px; font-size: 14px; line-height: 1.4; color: #a9b8b6; }
+  .code-row { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  #invite-code {
+    font-size: 26px; letter-spacing: 4px; font-weight: 600; color: #fff4d6;
+    font-variant-numeric: tabular-nums; user-select: all; -webkit-user-select: all;
   }
-  .store.disabled { background: #e9e9e9; color: #6b6b6b; cursor: default; }
+  #copy-code {
+    min-width: 96px; height: 40px; padding: 0 18px; border-radius: 20px; border: 1px solid #ffd166;
+    background: transparent; color: #ffd166; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+  }
+  #copy-code.done { background: #ffd166; color: #0b1a20; }
+  .store {
+    display: flex; align-items: center; justify-content: center; width: 100%; height: 52px; margin-top: 12px;
+    border-radius: 26px; font-size: 16px; font-weight: 600; text-decoration: none; background: #ffd166; color: #0b1a20;
+  }
+  .store.disabled { background: transparent; border: 1px solid #4f6e75; color: #8fa3a1; cursor: default; }
 </style>
 </head>
 <body>
 <main>
+  <p class="brand"><img id="app-icon" src="icon.png" alt="" width="36" height="36">Box of Fireflies</p>
   <img id="box-cover" src="cover.png" alt="Box cover" width="1200" height="800">
   <h1 id="invite-title">You're invited to a Box of Fireflies</h1>
   <p id="box-name"></p>
-  <p id="code-block">Already have the app? Open it and enter this code.<span id="invite-code"></span></p>
+  <div id="code-block">
+    <p id="code-label">Already have the app? Open it and enter this code.</p>
+    <div class="code-row">
+      <span id="invite-code"></span>
+      <button id="copy-code" type="button">Copy</button>
+    </div>
+  </div>
   <a id="app-store-link" class="store" href="https://apps.apple.com/app/apple-store/id6795919103">Download on the App Store</a>
   <a id="play-link" class="store">Get it on Google Play</a>
 </main>
 <script>
 (function () {
   var INVITE_PREVIEW_URL = 'https://us-central1-recuerdos-b2506.cloudfunctions.net/invitePreview';
+  var INVITE_BASE_URL = 'https://totmina.com/fireflies/invite/';
   var APP_STORE_PROVIDER_TOKEN = '';
   var PLAY_LISTED = false;
   var APP_STORE_ID = '6795919103';
@@ -64,6 +89,7 @@
   var cover = document.getElementById('box-cover');
   var codeBlock = document.getElementById('code-block');
   var codeEl = document.getElementById('invite-code');
+  var copyButton = document.getElementById('copy-code');
   var appStore = document.getElementById('app-store-link');
   var play = document.getElementById('play-link');
 
@@ -89,7 +115,10 @@
     if (cover.getAttribute('src') !== 'cover.png') cover.setAttribute('src', 'cover.png');
   });
 
+  var banner = document.querySelector('meta[name="apple-itunes-app"]');
+
   function showInvalid() {
+    banner.setAttribute('content', 'app-id=' + APP_STORE_ID);
     title.textContent = "This invite link isn't valid";
     codeBlock.hidden = true;
     codeEl.hidden = true;
@@ -100,6 +129,56 @@
     return;
   }
   codeEl.textContent = code;
+
+  // People who have the app see "Open" in Safari's banner; it hands the app the invite link.
+  banner.setAttribute(
+    'content',
+    'app-id=' + APP_STORE_ID + ', app-argument=' + INVITE_BASE_URL + code + '?ct=' + ct
+  );
+
+  function selectCode() {
+    var range = document.createRange();
+    range.selectNodeContents(codeEl);
+    var selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+
+  function copyBySelection() {
+    selectCode();
+    var copied = false;
+    try {
+      copied = document.execCommand('copy');
+    } catch (e) {
+      copied = false;
+    }
+    if (copied) window.getSelection().removeAllRanges();
+    return copied;
+  }
+
+  function settle(copied) {
+    if (copied) {
+      copyButton.textContent = 'Copied';
+      copyButton.className = 'done';
+    } else {
+      // Leave the code selected so the phone's own Copy is one tap away.
+      selectCode();
+      copyButton.textContent = 'Select and copy';
+      copyButton.className = '';
+    }
+  }
+
+  copyButton.addEventListener('click', function () {
+    var clipboard = navigator.clipboard;
+    if (clipboard && clipboard.writeText) {
+      clipboard.writeText(code).then(
+        function () { settle(true); },
+        function () { settle(copyBySelection()); }
+      );
+    } else {
+      settle(copyBySelection());
+    }
+  });
 
   fetch(INVITE_PREVIEW_URL + '?code=' + encodeURIComponent(code))
     .then(function (res) {

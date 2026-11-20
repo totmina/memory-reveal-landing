@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seal 2026 party card · Box of Fireflies</title>
+<meta name="description" content="A printable Seal 2026 card for your New Year's Eve party: write your box code and your names, and open the box together on New Year's Eve 2027.">
+<style>
+  @page { size: A6 portrait; margin: 0; }
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #e8e4df; color: #2b2b2b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .screen-only { max-width: 105mm; margin: 16px auto 0; font-size: 14px; line-height: 1.4; text-align: center; color: #4a4a4a; }
+  .card {
+    width: 105mm; height: 148mm; margin: 16px auto; padding: 12mm 10mm 10mm; background: #fff9f5; color: #1c2440;
+    border: 2mm solid #1c2440;
+    display: flex; flex-direction: column; text-align: center; overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .brand { margin: 0; font-size: 9pt; letter-spacing: 2px; text-transform: uppercase; color: #0a91b1; }
+  h1 { margin: 6mm 0 2mm; font-size: 30pt; line-height: 1; }
+  .promise { margin: 0 0 8mm; font-size: 12pt; line-height: 1.3; }
+  .field { margin: 0 0 3mm; font-size: 11pt; text-align: left; }
+  .line { display: block; border-bottom: 1px solid #1c2440; height: 9mm; }
+  .names { margin: 3mm 0 0; text-align: left; font-size: 11pt; }
+  .footer { margin-top: auto; font-size: 10pt; color: #0a91b1; }
+  @media print {
+    .screen-only { display: none; }
+    body { background: none; }
+    .card { margin: 0; }
+  }
+</style>
+</head>
+<body>
+<p class="screen-only">Print this page on A6 (or on A4 and cut it out). Write your box code on the card and everyone's names below it.</p>
+<section class="card">
+  <p class="brand">Box of Fireflies</p>
+  <h1>Seal 2026</h1>
+  <p class="promise">Open it together on New Year's Eve 2027</p>
+  <p class="field">Our box code: ________</p>
+  <div class="names">
+    Sealed by:
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+  <p class="footer">Get the app: totmina.com/fireflies/seal-2026</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seal 2026 · Box of Fireflies</title>
+<meta name="description" content="Seal 2026. Open it together on New Year's Eve 2027. Make a box with your people, fill it with notes, photos and voice notes, and open it together in a year.">
+<meta property="og:title" content="Seal 2026. Open it together on New Year's Eve 2027.">
+<meta property="og:description" content="Make a box with your people. Nobody can open it until New Year's Eve 2027.">
+<meta property="og:url" content="https://totmina.com/fireflies/seal-2026/">
+<meta property="og:type" content="website">
+<meta name="apple-itunes-app" content="app-id=6795919103">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 24px 16px; background: #1c2440; color: #4a4a4a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main {
+    width: 100%; max-width: 420px; background: #fff9f5; border-radius: 16px;
+    padding: 28px 22px 26px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  .eyebrow { margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #0a91b1; text-align: center; }
+  h1 { font-size: 26px; line-height: 1.25; margin: 10px 0 8px; color: #2b2b2b; text-align: center; }
+  .lede { margin: 0 0 22px; font-size: 16px; line-height: 1.45; text-align: center; }
+  ol { list-style: none; margin: 0 0 22px; padding: 0; counter-reset: step; }
+  li {
+    counter-increment: step; position: relative; padding: 0 0 14px 44px; font-size: 15px; line-height: 1.45;
+  }
+  li::before {
+    content: counter(step); position: absolute; left: 0; top: -2px; width: 30px; height: 30px; border-radius: 50%;
+    background: #f5c04a; color: #2b2b2b; font-weight: 700; text-align: center; line-height: 30px;
+  }
+  li strong { display: block; color: #2b2b2b; }
+  .store {
+    display: block; width: 100%; padding: 14px 16px; margin-top: 10px; border-radius: 8px; text-align: center;
+    font-size: 16px; font-weight: 700; text-decoration: none; background: #0a91b1; color: #fff;
+  }
+  .store.disabled { background: #e9e9e9; color: #6b6b6b; cursor: default; }
+  .card-link { display: block; margin-top: 18px; text-align: center; font-size: 15px; color: #0a91b1; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Box of Fireflies</p>
+  <h1 id="headline">Seal 2026. Open it together on New Year's Eve 2027.</h1>
+  <p class="lede">Make a box with your people tonight. Nobody can open it for a year.</p>
+  <ol>
+    <li><strong>Make a New Year box</strong>It opens on 31 December 2027.</li>
+    <li><strong>Invite your people</strong>Share the box's invite link with friends, family or your partner.</li>
+    <li><strong>Seal 2026 inside</strong>Everyone adds notes, photos and voice notes. Nobody can read them until the box opens, and then you open it together.</li>
+  </ol>
+  <a id="appstore" class="store" href="https://apps.apple.com/app/apple-store/id6795919103">Download on the App Store</a>
+  <a id="play" class="store disabled" aria-disabled="true">Coming soon to Google Play</a>
+  <a class="card-link" href="card/">Print a party card</a>
+</main>
+<script>
+(function () {
+  var CAMPAIGN = 'seal-2026';
+  var HIT_URL = 'https://us-central1-recuerdos-b2506.cloudfunctions.net/campaignHit';
+  var APP_STORE_PROVIDER_TOKEN = '';
+  var APP_STORE_PPID = '';
+  var PLAY_LISTED = false;
+  var APP_STORE_ID = '6795919103';
+  var PLAY_PACKAGE = 'com.totmina.memories';
+  // Store links match the invite page (../invite/); change both together.
+
+  var ct = new URLSearchParams(window.location.search).get('ct') || '';
+  if (!/^[a-z0-9-]{1,40}$/.test(ct)) ct = CAMPAIGN;
+
+  // Counts are a guide: a failed hit never blocks the page or the store link.
+  function hit(event) {
+    try {
+      var body = JSON.stringify({ ct: ct, event: event });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(HIT_URL, body);
+      } else {
+        fetch(HIT_URL, { method: 'POST', body: body, keepalive: true, mode: 'no-cors' }).catch(function () {});
+      }
+    } catch (e) {}
+  }
+
+  var appStore = document.getElementById('appstore');
+  var play = document.getElementById('play');
+
+  var appStoreUrl = 'https://apps.apple.com/app/apple-store/id' + APP_STORE_ID + '?ct=' + ct;
+  if (APP_STORE_PROVIDER_TOKEN) appStoreUrl += '&pt=' + encodeURIComponent(APP_STORE_PROVIDER_TOKEN);
+  if (APP_STORE_PPID) appStoreUrl += '&ppid=' + encodeURIComponent(APP_STORE_PPID);
+  appStore.setAttribute('href', appStoreUrl + '&mt=8');
+  appStore.addEventListener('click', function () { hit('store_ios'); });
+
+  if (PLAY_LISTED) {
+    play.setAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=' + PLAY_PACKAGE + '&referrer=' +
+        encodeURIComponent('utm_source=totmina.com&utm_medium=campaign_page&utm_campaign=' + ct)
+    );
+    play.textContent = 'Get it on Google Play';
+    play.className = 'store';
+    play.removeAttribute('aria-disabled');
+    play.addEventListener('click', function () { hit('store_android'); });
+  }
+
+  hit('view');
+})();
+</script>
+</body>
+</html>
